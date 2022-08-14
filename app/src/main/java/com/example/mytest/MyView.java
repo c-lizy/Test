@@ -52,8 +52,8 @@ public class MyView extends View {
 
         mPaintBorder.setColor(Color.parseColor("#00ff00"));
         canvas.drawCircle(0,0,100,mPaint);
-        canvas.drawCircle(0,getBottom(),100,mPaint);
-        canvas.drawCircle(getRight(),0,100,mPaint);
+        canvas.drawCircle(0,getBottom(),0,mPaint);
+        canvas.drawCircle(getRight(),0,0,mPaint);
         canvas.drawCircle(getRight(),getBottom(),100,mPaint);
 //        canvas.drawCircle(40,40,40,mPaint);
         drawBorder(canvas);

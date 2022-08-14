@@ -6,12 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-
-    <com.example.mytest.MyView
+    <TextView
+        android:id="@+id/http_postGet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dime_10dp"
+        android:text="@string/http_post"
+        android:textSize="@dimen/size_18sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_20dp"
+        android:text="@string/post"
+        android:textAllCaps="false"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/http_postGet" />
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dime_20dp"
+        android:text="@string/get"
+        android:textAllCaps="false"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/http_postGet" />
+
+    <EditText
+        android:id="@+id/edit_pg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dime_200dp"
+        android:layout_marginTop="@dimen/dime_10dp"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_post" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
