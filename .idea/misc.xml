@@ -6,6 +6,8 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/http_activity.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/start_activity.xml" value="0.22056159420289856" />
       </map>
     </option>
   </component>
