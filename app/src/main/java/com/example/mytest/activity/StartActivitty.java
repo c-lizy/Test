@@ -9,9 +9,10 @@ import com.example.mytest.BaseActivity;
 import com.example.mytest.R;
 
 public class StartActivitty extends BaseActivity {
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.start_activity);
     }
 }

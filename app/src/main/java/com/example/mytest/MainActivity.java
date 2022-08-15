@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.mytest.activity.StartActivitty;
+
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -28,11 +30,11 @@ import okhttp3.Response;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
+    }
 
     @Override
     public void onClick(View v) {
