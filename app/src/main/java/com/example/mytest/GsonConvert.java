@@ -1,4 +1,6 @@
 package com.example.mytest;
+
+
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
@@ -82,8 +84,7 @@ public class GsonConvert {
             }
         };
     }
-
-
+    
     /**
      * 判断数据是否为JSON
      * @param content
