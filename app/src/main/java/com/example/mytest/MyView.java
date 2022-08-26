@@ -1,4 +1,4 @@
-package com.example.mytest;
+package com.yizhixionga.test_2.custom;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,58 +9,74 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+
+/**
+ * Author:lizy
+ * time:2022/8/26 13:45
+ * Description : MyView正方形view
+ **/
 public class MyView extends View {
-    private Paint mPaint;
-    private Paint mPaintBorder;
 
     public MyView(Context context) {
         super(context);
-        init();
     }
-
 
     public MyView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        init();
     }
 
-    public MyView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init();
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        int width = getMySize(100, widthMeasureSpec);
+        int height = getMySize(100, heightMeasureSpec);
+
+        if (width < height) {
+            height=width;
+        } else {
+            width = height;
+        }
+
+        setMeasuredDimension(width,height);
     }
 
-    private void init() {
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);//抗锯齿
-        mPaint.setColor(getResources().getColor(R.color.purple_200));//画笔颜色
-        mPaint.setStyle(Paint.Style.FILL);//画笔风格
-
-        mPaintBorder = new Paint();
-        mPaintBorder.setAntiAlias(true);//抗锯齿
-        mPaintBorder.setColor(getResources().getColor(R.color.teal_700));//画笔颜色
-        mPaintBorder.setStyle(Paint.Style.STROKE);//画笔风格
-        mPaintBorder.setStrokeWidth(20);//画笔粗细
-
-    }
-
-    /*重写该方法，在这里绘图*/
     @Override
     protected void onDraw(Canvas canvas) {
+        //调用父View的onDraw函数，因为View这个类帮我们实现了一些
+        // 基本的而绘制功能，比如绘制背景颜色、背景图片等
         super.onDraw(canvas);
-        mPaint.setColor(Color.parseColor("#ff00ff"));
-        canvas.drawRect(0,0,getWidth(),getHeight(),mPaint);
+        //也可以是getMeasuredHeight()/2,本例中我们已经将宽高设置相等了
+        int r = getMeasuredWidth()/2;
+        //圆心的横坐标为当前的View的左边起始位置+半径
+        int centerX = getLeft()+r;
+        //圆心的纵坐标为当前的View的顶部起始位置+半径
+        int centerY = getTop()+r;
 
-        mPaintBorder.setColor(Color.parseColor("#00ff00"));
-        canvas.drawCircle(0,0,100,mPaint);
-        canvas.drawCircle(0,getBottom(),0,mPaint);
-        canvas.drawCircle(getRight(),0,0,mPaint);
-        canvas.drawCircle(getRight(),getBottom(),100,mPaint);
-//        canvas.drawCircle(40,40,40,mPaint);
-        drawBorder(canvas);
+        Paint paint = new Paint();
+        paint.setColor(Color.GREEN);
+        //开始绘制
+        canvas.drawCircle(centerX,centerY,r,paint);
     }
 
-    public void drawBorder(Canvas canvas){
-        canvas.drawRect(0,0,getWidth(),getHeight(),mPaintBorder);
+    private int getMySize(int defauilSize, int measureSpec) {
+        int mySize = defauilSize;
 
+        int mode = MeasureSpec.getMode(measureSpec);
+        int size = MeasureSpec.getSize(measureSpec);
+
+        switch (mode) {
+            case MeasureSpec.UNSPECIFIED://如果没有指定大小，就设置为默认大小
+                mySize = defauilSize;
+                break;
+            case MeasureSpec.AT_MOST://如果测量模式是最大取值为size,我们将大小取最大值,你也可以取其他值
+            case MeasureSpec.EXACTLY://如果是固定的大小，那就不要去改变它
+                mySize = size;
+                break;
+        }
+
+        return mySize;
     }
+
+
 }
