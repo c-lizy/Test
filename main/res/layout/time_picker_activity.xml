@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择时间"
+        android:layout_marginTop="@dimen/dime_20dp"/>
+
+    <!-- timePickerMode取值spinner表示下拉框风格，取值clock表示钟表风格 -->
+    <TimePicker
+        android:id="@+id/Time_tp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:spinnersShown="true"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="确        定"/>
+
+    <TextView
+        android:id="@+id/tv_TimeTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_17sp"/>
+
+</LinearLayout>

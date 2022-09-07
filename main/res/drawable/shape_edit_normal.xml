@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--    指定形状内部填充的颜色-->
+    <solid android:color="#ffffff" />
+
+    <!--    指定形状轮廓的颜色和粗细-->
+    <stroke
+        android:width="@dimen/dime_1dp"
+        android:color="#aaaaaa"/>
+
+    <!--    指定形状四个圆角的半径-->
+    <corners android:radius="@dimen/dime_5dp" />
+
+    <!--    指定形状四个方向的间距-->
+    <padding
+        android:bottom="@dimen/dime_5dp"
+        android:left="@dimen/dime_5dp"
+        android:right="@dimen/dime_5dp"
+        android:top="@dimen/dime_5dp" />
+</shape>

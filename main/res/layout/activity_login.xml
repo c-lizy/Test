@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dime_5dp"
+    tools:context=".activity.LoginActivity">
+
+    <RadioGroup
+        android:id="@+id/rg_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dime_50dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_pswLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="left|center"
+            android:text="@string/psw_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_17sp" />
+
+        <RadioButton
+            android:id="@+id/rb_verifyCodeLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:gravity="left|center"
+            android:text="@string/verityCode_Login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_17sp" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dime_50dp">
+
+        <TextView
+            android:id="@+id/tv_phoneCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/phone_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_17sp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dime_5dp"
+            android:layout_marginBottom="@dimen/dime_5dp"
+            android:layout_toRightOf="@id/tv_phoneCode"
+            android:background="@drawable/editext_selector"
+            android:gravity="left|center"
+            android:hint="@string/ple_phone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/size_17sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dime_50dp">
+
+        <TextView
+            android:id="@+id/tv_psw"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/psw_login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_17sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/tv_psw">
+
+            <EditText
+                android:id="@+id/et_psw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dime_5dp"
+                android:layout_marginBottom="@dimen/dime_5dp"
+                android:background="@drawable/editext_selector"
+                android:gravity="left|center"
+                android:hint="@string/ple_psw"
+                android:inputType="numberPassword"
+                android:maxLength="11"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/size_17sp" />
+
+            <Button
+                android:id="@+id/forget_psw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="@string/forget_psw"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_17sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/remember_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:button="@drawable/checkbox_selector"
+        android:checked="false"
+        android:padding="@dimen/dime_10dp"
+        android:text="@string/remember_psw"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_17sp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_20sp" />
+
+
+</LinearLayout>
