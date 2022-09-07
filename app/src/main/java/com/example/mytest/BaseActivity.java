@@ -23,5 +23,10 @@ public class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(mContext,cla);
         startActivity(intent);
     }
+    /*跳转方法*/
+    public void intJump(Class cla){
+        Intent intent = new Intent(mContext,cla);
+        startActivity(intent);
+    }
 
 }
